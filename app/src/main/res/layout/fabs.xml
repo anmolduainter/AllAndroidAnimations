@@ -10,7 +10,7 @@
         android:layout_width="60dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
-        android:layout_height="250dp">
+        android:layout_height="300dp">
 
 
         <android.support.design.widget.FloatingActionButton
@@ -26,8 +26,11 @@
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/sub_fb_float_one"
             android:src="@android:drawable/ic_dialog_email"
-            android:layout_width="30dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:fabSize="mini"
+            android:visibility="gone"
+            app:backgroundTint="#376"
             android:layout_above="@id/fb_float"
             android:layout_centerInParent="true"
             android:layout_marginBottom="30dp"/>
@@ -35,16 +38,22 @@
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/sub_fb_float_two"
             android:src="@android:drawable/ic_dialog_map"
-            android:layout_width="30dp"
+            android:layout_width="wrap_content"
+            android:visibility="gone"
             android:layout_height="wrap_content"
+            app:backgroundTint="@color/cardview_dark_background"
             android:layout_above="@id/sub_fb_float_one"
             android:layout_marginBottom="30dp"
+            app:fabSize="mini"
             android:layout_centerInParent="true"/>
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/sub_fb_float_three"
             android:src="@android:drawable/ic_menu_share"
-            android:layout_width="30dp"
+            android:layout_width="wrap_content"
+            app:fabSize="mini"
+            android:visibility="gone"
+            app:backgroundTint="@color/colorPrimaryDark"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
             android:layout_centerInParent="true"

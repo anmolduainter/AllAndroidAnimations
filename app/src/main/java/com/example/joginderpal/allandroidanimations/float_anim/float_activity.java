@@ -5,9 +5,11 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.RotateAnimation;
+import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 
 import com.example.joginderpal.allandroidanimations.R;
@@ -32,23 +34,48 @@ public class float_activity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                AnimationSet anim=new AnimationSet(true);
-                TranslateAnimation translateAnimation=new TranslateAnimation(0,0,200,0);
-                RotateAnimation rotateAnimation=new RotateAnimation(0,360,Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f);
-                rotateAnimation.setDuration(2000);
-                anim.addAnimation(rotateAnimation);
-                translateAnimation.setDuration(2000);
-                anim.addAnimation(translateAnimation);
-                fab1.startAnimation(anim);
-                TranslateAnimation translateAnimation1=new TranslateAnimation(0,0,400,0);
-                translateAnimation1.setDuration(1000);
-                fab2.startAnimation(translateAnimation1);
-
-
+                animate1();
             }
         });
 
+        fab1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                animate2();
+            }
+        });
 
     }
+
+    public void animate1(){
+
+        fab1.setVisibility(View.VISIBLE);
+        fab2.setVisibility(View.VISIBLE);
+        fab3.setVisibility(View.VISIBLE);
+        AnimationSet anim=new AnimationSet(true);
+        TranslateAnimation translateAnimation=new TranslateAnimation(0,0,200,0);
+        translateAnimation.setDuration(800);
+        anim.addAnimation(translateAnimation);
+        fab1.startAnimation(anim);
+        TranslateAnimation translateAnimation1=new TranslateAnimation(0,0,400,0);
+        translateAnimation1.setDuration(500);
+        fab2.startAnimation(translateAnimation1);
+        TranslateAnimation translateAnimation2=new TranslateAnimation(0,0,600,0);
+        translateAnimation2.setDuration(300);
+        fab3.startAnimation(translateAnimation2);
+
+    }
+
+    public void animate2(){
+
+        AlphaAnimation animation=new AlphaAnimation(1,0);
+        animation.setDuration(5000);
+        fab1.startAnimation(animation);
+        fab2.startAnimation(animation);
+        fab3.startAnimation(animation);
+
+    }
+
+
+
 }
