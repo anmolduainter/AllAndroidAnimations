@@ -16,6 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".float_anim.float_activity"/>
+        <activity android:name=".inshorts.inshorts_main"/>
     </application>
 
 </manifest>

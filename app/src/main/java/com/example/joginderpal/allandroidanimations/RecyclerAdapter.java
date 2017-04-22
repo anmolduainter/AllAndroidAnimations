@@ -1,10 +1,15 @@
 package com.example.joginderpal.allandroidanimations;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.joginderpal.allandroidanimations.float_anim.float_activity;
+import com.example.joginderpal.allandroidanimations.inshorts.inshorts_main;
 
 /**
  * Created by joginderpal on 18-04-2017.
@@ -12,7 +17,15 @@ import android.widget.TextView;
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
 
-    String anim[]={"Floating Action Button","Animation 2","Animation 3","Animation 4","Animation 5","Animation 6","Animation 7"};
+    String anim[]={"Fabs","Inshorts","Animation 3","Animation 4","Animation 5","Animation 6","Animation 7"};
+
+    Context ctx;
+
+    public RecyclerAdapter(Context ctx) {
+
+        this.ctx=ctx;
+
+    }
 
 
     @Override
@@ -48,6 +61,24 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             super(item);
 
             tx= (TextView) item.findViewById(R.id.tx);
+            item.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position=getAdapterPosition();
+
+                    if (anim[position].equals("Inshorts")){
+                        Intent i=new Intent(ctx,inshorts_main.class);
+                        ctx.startActivity(i);
+                    }
+
+                    else if (anim[position].equals("Fabs")){
+                        Intent i=new Intent(ctx,float_activity.class);
+                        ctx.startActivity(i);
+                    }
+
+
+                }
+            });
 
 
         }

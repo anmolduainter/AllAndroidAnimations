@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#2897d6">
+
+    <ImageView
+        android:id="@+id/image_inshorts"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@drawable/first"/>
+
+
+    <TextView
+        android:layout_below="@id/image_inshorts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <ImageView
+            android:id="@+id/bttm_image_inshorts"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/first"/>
+        <TextView
+            android:textColor="#fff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DATE :"/>
+
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>

@@ -1,6 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <RelativeLayout
+        android:layout_gravity="bottom|end"
+        android:layout_width="60dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_height="250dp">
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fb_float"
+            android:src="@android:drawable/ic_dialog_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_alignParentBottom="true"
+            />
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/sub_fb_float_one"
+            android:src="@android:drawable/ic_dialog_email"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/fb_float"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="30dp"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/sub_fb_float_two"
+            android:src="@android:drawable/ic_dialog_map"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/sub_fb_float_one"
+            android:layout_marginBottom="30dp"
+            android:layout_centerInParent="true"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/sub_fb_float_three"
+            android:src="@android:drawable/ic_menu_share"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_centerInParent="true"
+            android:layout_above="@id/sub_fb_float_two"/>
+
+
+
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
