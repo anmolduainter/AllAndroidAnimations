@@ -2,40 +2,59 @@
 <RelativeLayout
     android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:id="@+id/rv"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="#2897d6">
 
     <ImageView
         android:id="@+id/image_inshorts"
+        android:layout_centerHorizontal="true"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:background="@drawable/first"/>
+        android:layout_height="220dp" />
 
 
     <TextView
+        android:id="@+id/text_content"
+        android:textSize="20dp"
+        android:layout_marginTop="30dp"
+        android:textColor="#fff"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:text="Wait a moment please"
         android:layout_below="@id/image_inshorts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+
     <RelativeLayout
-        android:layout_alignParentBottom="true"
+        android:id="@+id/article"
+       android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="60dp">
-        <ImageView
-            android:id="@+id/bttm_image_inshorts"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/first"/>
+        android:layout_height="80dp">
+
         <TextView
+            android:id="@+id/a"
             android:textColor="#fff"
+            android:typeface="sans"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="15dp"
+            android:text="For More Details Click On The Link Below : "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DATE :"/>
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20dp"
+            android:textStyle="italic|bold"
+            android:text="https:\\\\google.com"
+            android:layout_below="@id/a"/>
 
     </RelativeLayout>
-
-
-
 
 
 </RelativeLayout>
