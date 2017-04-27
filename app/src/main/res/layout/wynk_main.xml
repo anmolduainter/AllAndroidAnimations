@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="350dp"
+    android:id="@+id/rel_wynk">
 
    <com.example.joginderpal.allandroidanimations.wynk.ViewPagerCust_wynk
        android:id="@+id/wynk_view_pager"
-       android:layout_width="300dp"
-       android:layout_height="300dp"
-       android:layout_centerInParent="true"></com.example.joginderpal.allandroidanimations.wynk.ViewPagerCust_wynk>
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"></com.example.joginderpal.allandroidanimations.wynk.ViewPagerCust_wynk>
 
 
 

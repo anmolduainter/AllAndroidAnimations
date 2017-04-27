@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.joginderpal.allandroidanimations.float_anim.float_activity;
 import com.example.joginderpal.allandroidanimations.inshorts.inshorts_main;
+import com.example.joginderpal.allandroidanimations.wynk.wynk_main;
 
 /**
  * Created by joginderpal on 18-04-2017.
@@ -17,7 +18,7 @@ import com.example.joginderpal.allandroidanimations.inshorts.inshorts_main;
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
 
-    String anim[]={"Fabs","Inshorts","Animation 3","Animation 4","Animation 5","Animation 6","Animation 7"};
+    String anim[]={"Fabs","Inshorts","Wynk","Animation 4","Animation 5","Animation 6","Animation 7"};
 
     Context ctx;
 
@@ -75,6 +76,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                         Intent i=new Intent(ctx,float_activity.class);
                         ctx.startActivity(i);
                     }
+
+                    else if (anim[position].equals("Wynk")){
+
+                        Intent i=new Intent(ctx,wynk_main.class);
+                        ctx.startActivity(i);
+
+                    }
+
 
 
                 }

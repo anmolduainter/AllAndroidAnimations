@@ -21,6 +21,8 @@
         <activity android:name=".float_anim.float_activity"/>
         <activity android:name=".inshorts.inshorts_main"
             android:screenOrientation="portrait"/>
+        <activity android:name=".wynk.wynk_main"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
