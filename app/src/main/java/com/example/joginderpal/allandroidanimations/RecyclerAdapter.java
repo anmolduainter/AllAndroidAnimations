@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.TranslateAnimation;
 import android.widget.TextView;
 
 import com.example.joginderpal.allandroidanimations.float_anim.float_activity;
@@ -17,14 +18,18 @@ import com.example.joginderpal.allandroidanimations.wynk.wynk_main;
  */
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
+    int lastposition=-1;
 
     String anim[]={"Fabs","Inshorts","Wynk","Animation 4","Animation 5","Animation 6","Animation 7"};
 
     Context ctx;
 
-    public RecyclerAdapter(Context ctx) {
+    MainActivity mainActivity;
+
+    public RecyclerAdapter(Context ctx, MainActivity mainActivity) {
 
         this.ctx=ctx;
+        this.mainActivity=mainActivity;
 
     }
 
@@ -45,6 +50,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
         holder.tx.setText(anim[position]);
 
+        if (position>lastposition) {
+            TranslateAnimation translateAnimation = new TranslateAnimation(2000, 0, 0, 0);
+            translateAnimation.setDuration(800 - position * 60);
+            holder.itemView.startAnimation(translateAnimation);
+
+            lastposition++;
+
+        }
 
 
     }
@@ -70,6 +83,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                     if (anim[position].equals("Inshorts")){
                         Intent i=new Intent(ctx,inshorts_main.class);
                         ctx.startActivity(i);
+                        mainActivity.overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                     }
 
                     else if (anim[position].equals("Fabs")){
@@ -81,7 +95,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
                         Intent i=new Intent(ctx,wynk_main.class);
                         ctx.startActivity(i);
-
+                        mainActivity.overridePendingTransition(R.anim.slide_up,R.anim.slide_up_activit);
                     }
 
 
