@@ -23,6 +23,8 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".wynk.wynk_main"
             android:screenOrientation="portrait"/>
+        <activity android:name=".navigation_drawer.navigationMain"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

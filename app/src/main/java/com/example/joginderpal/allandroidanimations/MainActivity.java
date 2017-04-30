@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.graphics.Color;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.transition.TransitionManager;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewAnimationUtils;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.ImageView;
 
@@ -96,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_search,menu);
         MenuItem search=menu.findItem(R.id.action_search);
         SearchView searchView= (SearchView) search.getActionView();
+        searchView.setQueryHint("Search the Animations");
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -110,5 +113,22 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onCreateOptionsMenu(menu);
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+
+            case R.id.action_search:
+                appBarLayout.setExpanded(false);
+                TransitionManager.beginDelayedTransition((ViewGroup)findViewById(R.id.tooolbar));
+                MenuItemCompat.expandActionView(item);
+                return true;
+
+        }
+
+
+        return super.onOptionsItemSelected(item);
     }
 }
