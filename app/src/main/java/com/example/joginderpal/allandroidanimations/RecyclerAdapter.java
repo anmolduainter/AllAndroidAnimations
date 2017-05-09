@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.view.animation.TranslateAnimation;
 import android.widget.TextView;
 
+import com.example.joginderpal.allandroidanimations.cool_navigation.coolNavMain;
 import com.example.joginderpal.allandroidanimations.float_anim.float_activity;
 import com.example.joginderpal.allandroidanimations.inshorts.inshorts_main;
 import com.example.joginderpal.allandroidanimations.navigation_drawer.navigationMain;
@@ -21,7 +22,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     int lastposition=-1;
 
-    String anim[]={"Fabs","Inshorts","Wynk","Navigation Drawer","Animation 5","Animation 6","Animation 7"};
+    String anim[]={"Fabs","Inshorts","Wynk","Navigation Drawer","CoolNavigation","Animation 6","Animation 7"};
 
     Context ctx;
 
@@ -99,14 +100,19 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                         mainActivity.overridePendingTransition(R.anim.slide_up,R.anim.slide_up_activit);
                     }
 
-                    else if (anim[position].contains("Navigation")){
+                    else if (anim[position].equals("Navigation Drawer")){
 
                         Intent i=new Intent(ctx,navigationMain.class);
                         ctx.startActivity(i);
 
                     }
 
+                    else if (anim[position].equals("CoolNavigation")){
 
+                       Intent i=new Intent(ctx,coolNavMain.class);
+                        ctx.startActivity(i);
+
+                    }
 
                 }
             });

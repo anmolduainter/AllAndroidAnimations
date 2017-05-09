@@ -25,6 +25,9 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".navigation_drawer.navigationMain"
             android:screenOrientation="portrait"/>
+        <activity android:name=".cool_navigation.coolNavMain"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
