@@ -28,6 +28,8 @@
         <activity android:name=".cool_navigation.coolNavMain"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Arc.arc_main"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
