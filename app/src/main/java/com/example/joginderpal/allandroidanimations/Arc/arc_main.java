@@ -3,6 +3,7 @@ package com.example.joginderpal.allandroidanimations.Arc;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Point;
@@ -60,11 +61,10 @@ public class arc_main extends AppCompatActivity {
                 loading=true;
                 TranslateAnimation translateAnimation=new TranslateAnimation(0,-xDistance,0,-yDistance);
                 translateAnimation.setDuration(200);
-               // translateAnimation.setInterpolator(new BounceInterpolator());
                 LayoutInflater li= (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 view=li.inflate(R.layout.arc_main_dialog,null);
                 viewGroup= (ViewGroup) findViewById(R.id.arc_rel);
-                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(800,800);
+                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
                 params.addRule(RelativeLayout.CENTER_IN_PARENT,RelativeLayout.CENTER_IN_PARENT);
                 viewGroup.addView(view,0,params);
                 view.setAlpha(0);
@@ -74,7 +74,7 @@ public class arc_main extends AppCompatActivity {
 
                         view.setAlpha(1);
                         fab.setVisibility(View.GONE);
-                        final Animator anim= ViewAnimationUtils.createCircularReveal(view,view.getRight()/3,view.getTop()/3,0,Math.max(view.getWidth(),view.getHeight()));
+                        final Animator anim= ViewAnimationUtils.createCircularReveal(view,(int)xDistance,(int)yDistance,0,Math.max(view.getWidth(),view.getHeight()));
                         anim.setDuration(300);
                         anim.start();
 
@@ -83,7 +83,6 @@ public class arc_main extends AppCompatActivity {
 
                 fab.startAnimation(translateAnimation);
 
-              //  view.startAnimation(translateAnimation);
             }
         });
     }
@@ -94,22 +93,31 @@ public class arc_main extends AppCompatActivity {
     public void onBackPressed() {
 
         if (loading) {
-            Animator anim = ViewAnimationUtils.createCircularReveal(view, view.getRight() / 3, view.getTop() / 3, view.getHeight(), 0);
-            anim.setDuration(300);
 
+            int a=(view.getTop()+view.getBottom())/2;
+            int b=(view.getLeft()+view.getRight())/2;
+            Animator anim = ViewAnimationUtils.createCircularReveal(view,b,a,view.getHeight(),fab.getWidth()/2);
+            anim.setDuration(300);
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
 
                     viewGroup.removeView(view);
                     fab.setVisibility(View.VISIBLE);
-                    TranslateAnimation translateAnimation = new TranslateAnimation(-xDistance-2, 0, -yDistance-2, 0);
+                    TranslateAnimation translateAnimation = new TranslateAnimation(-xDistance, 0, -yDistance, 0);
                     translateAnimation.setDuration(200);
                     fab.startAnimation(translateAnimation);
 
                 }
-            }, 300);
+            },300);
 
+     /*       new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    viewGroup.removeView(view);
+                }
+            },300);
+*/
 
             anim.start();
 

@@ -1,26 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#384"
-    >
+    android:background="@color/colorPrimaryDark">
 
 
       <ImageView
           android:id="@+id/arc_main_google_plus_image"
           android:layout_width="100dp"
           android:layout_height="100dp"
+          android:layout_marginTop="100dp"
           android:background="@drawable/ic_google_plus"
-          android:layout_centerInParent="true"/>
+          android:layout_centerHorizontal="true" />
 
-      <Button
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:textColor="#fff"
-          android:background="#D14539"
-          android:text="Account"
+
+      <RelativeLayout
           android:layout_below="@id/arc_main_google_plus_image"
-          android:layout_centerHorizontal="true"/>
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
 
+
+       <android.support.design.widget.TextInputLayout
+           android:id="@+id/username_arc_google_plus"
+          android:layout_width="300dp"
+           android:layout_marginTop="20dp"
+           android:layout_centerHorizontal="true"
+          android:background="@drawable/arc_google_plus_edittext"
+          android:theme="@style/Theme.AppCompat.Light"
+          android:layout_height="50dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:textColor="#000"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:textStyle="italic"
+                android:textColorHint="@color/colorPrimary"
+                android:inputType="text"
+                android:background="@null"
+                android:hint="Username"
+                android:layout_height="match_parent"
+                />
+      </android.support.design.widget.TextInputLayout>
+
+
+
+          <android.support.design.widget.TextInputLayout
+              android:id="@+id/password_arc_google_plus"
+              android:layout_width="300dp"
+              android:layout_marginTop="20dp"
+              android:layout_centerHorizontal="true"
+              android:layout_below="@id/username_arc_google_plus"
+              android:background="@drawable/arc_google_plus_edittext"
+              android:theme="@style/Theme.AppCompat.Light"
+              android:layout_height="50dp">
+              <EditText
+                  android:layout_width="match_parent"
+                  android:textColor="#000"
+                  android:layout_marginLeft="5dp"
+                  android:layout_marginRight="5dp"
+                  android:layout_marginTop="5dp"
+                  android:layout_marginBottom="5dp"
+                  android:textStyle="italic"
+                  android:textColorHint="@color/colorPrimary"
+                  android:inputType="text"
+                  android:background="@null"
+                  android:hint="Password"
+                  android:layout_height="match_parent"
+                  />
+          </android.support.design.widget.TextInputLayout>
+
+
+
+          <Button
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@id/password_arc_google_plus"
+              android:layout_marginTop="30dp"
+              android:layout_centerHorizontal="true"
+              android:text="Login"
+              android:textColor="#fff"
+              android:textStyle="bold"
+              android:textSize="20dp"
+              android:background="@color/colorPrimaryDark"
+              />
+
+
+
+      </RelativeLayout>
 
 </RelativeLayout>
