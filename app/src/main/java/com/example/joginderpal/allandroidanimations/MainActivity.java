@@ -5,9 +5,11 @@ import android.graphics.Color;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.transition.TransitionManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
@@ -44,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         Glide.with(MainActivity.this).load(R.drawable.photo).into(im);
 
         rv= (RecyclerView) findViewById(R.id.recycler_view);
+        rv.addItemDecoration(new com.example.joginderpal.allandroidanimations.DividerItemDecoration(ContextCompat.getDrawable(getApplicationContext(),
+                R.drawable.item_decorator)));
         layoutManager=new LinearLayoutManager(MainActivity.this);
         rv.setLayoutManager(layoutManager);
         adapter=new RecyclerAdapter(MainActivity.this,MainActivity.this);
