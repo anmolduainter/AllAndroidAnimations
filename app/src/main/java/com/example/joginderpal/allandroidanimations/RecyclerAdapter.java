@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.joginderpal.allandroidanimations.Arc.arc_main;
 import com.example.joginderpal.allandroidanimations.Windows.leftRight.windowsMain;
+import com.example.joginderpal.allandroidanimations.Windows.topDown.windowsMainOne;
 import com.example.joginderpal.allandroidanimations.cool_navigation.coolNavMain;
 import com.example.joginderpal.allandroidanimations.float_anim.float_activity;
 import com.example.joginderpal.allandroidanimations.inshorts.inshorts_main;
@@ -24,7 +25,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     int lastposition=-1;
 
-    String anim[]={"Fabs","Inshorts","Wynk","Navigation Drawer","CoolNavigation","Arc","Windows"};
+    String anim[]={"Fabs","Inshorts","Wynk","Navigation Drawer","CoolNavigation","Arc","Windows(Left-Right)","Windows(Top-Down)"};
 
     Context ctx;
 
@@ -122,13 +123,20 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
                     }
 
-                    else if (anim[position].equals("Windows")){
+                    else if (anim[position].equals("Windows(Left-Right)")){
 
                         Intent i=new Intent(ctx,windowsMain.class);
                         ctx.startActivity(i);
 
                     }
 
+
+                    else if (anim[position].equals("Windows(Top-Down)")){
+
+                        Intent i=new Intent(ctx,windowsMainOne.class);
+                        ctx.startActivity(i);
+
+                    }
 
 
 
