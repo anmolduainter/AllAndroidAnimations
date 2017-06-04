@@ -111,14 +111,6 @@ public class arc_main extends AppCompatActivity {
                 }
             },300);
 
-     /*       new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    viewGroup.removeView(view);
-                }
-            },300);
-*/
-
             anim.start();
 
             loading=false;

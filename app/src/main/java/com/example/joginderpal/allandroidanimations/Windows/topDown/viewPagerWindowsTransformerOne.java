@@ -3,13 +3,8 @@ package com.example.joginderpal.allandroidanimations.Windows.topDown;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 
-/**
- * Created by joginderpal on 28-05-2017.
- */
 
-
-
-  /* PROBLEM IN TOP DOWN */
+ /* PROBLEM IN TOP DOWN */
 
 
 
@@ -24,29 +19,31 @@ public class viewPagerWindowsTransformerOne implements ViewPager.PageTransformer
 
 
         if (position==-1){
-            page.setPivotX(0);
-            page.setPivotY(0);
-            page.setRotationX(90);
+
+
 
         }
         else if (position<0 && position>-1){
+
             page.setPivotX(pivotX);
             page.setPivotY(pivotY);
-            page.setRotationX(45*position);
+            page.setRotationX(90*position);
+
         }
 
 
         if (position==1){
-            page.setPivotX(pivotX);
-            page.setPivotY(pivotY);
-            page.setRotationX(90);
+
+
 
         }
 
-        if(position>=0&&position<1){
+        else if(position>=0&&position<1){
+
             page.setPivotX(0);
-            page.setPivotY(page.getHeight()/2);
-            page.setRotationX(45*position);
+            page.setPivotY(0);
+            page.setRotationX(-90*position);
+
         }
 
     }

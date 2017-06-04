@@ -10,6 +10,7 @@ import android.view.animation.TranslateAnimation;
 import android.widget.TextView;
 
 import com.example.joginderpal.allandroidanimations.Arc.arc_main;
+import com.example.joginderpal.allandroidanimations.Arc.arc_main_two;
 import com.example.joginderpal.allandroidanimations.Windows.leftRight.windowsMain;
 import com.example.joginderpal.allandroidanimations.Windows.topDown.windowsMainOne;
 import com.example.joginderpal.allandroidanimations.cool_navigation.coolNavMain;
@@ -25,7 +26,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     int lastposition=-1;
 
-    String anim[]={"Fabs","Inshorts","Wynk","Navigation Drawer","CoolNavigation","Arc","Windows(Left-Right)","Windows(Top-Down)"};
+    String anim[]={"Fabs","Inshorts","Wynk","Navigation Drawer","CoolNavigation","Arc","Windows(Left-Right)","Windows(Top-Down)","Arc-2"};
 
     Context ctx;
 
@@ -139,6 +140,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                     }
 
 
+                    else if (anim[position].equals("Arc-2")){
+
+                        Intent i=new Intent(ctx,arc_main_two.class);
+                        ctx.startActivity(i);
+
+                    }
+
+
+
 
                 }
             });
@@ -150,3 +160,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
 
 }
+
+
+
+
+
+
